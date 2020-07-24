@@ -15,7 +15,7 @@ async def on_message(message):
     if message.content.startswith("ぬるぬる"):
       
         if client.user != message.author:
-            # メッセージを書きます
+            
             m = "ぬるぬる" + message.author.name + "さん！"
             
             await message.channel.send(m)
