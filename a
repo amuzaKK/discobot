@@ -1,0 +1,23 @@
+import discord
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    printf('Logged in as')
+    printf(client.user.name)
+    printf(client.user.id)
+    printf('-----')
+
+@client.event
+async def on_message(message):
+    
+    if message.content.startswith("ぬるぬる"):
+      
+        if client.user != message.author:
+            # メッセージを書きます
+            m = "ぬるぬる" + message.author.name + "さん！"
+            
+            await message.channel.send(m)
+
+client.run("NzM0NzUyNDg4NTAyMTk4MzYy.XxWRlA.tLkRG-6gQtQ0h9cZpFfyz82ZRwU")
